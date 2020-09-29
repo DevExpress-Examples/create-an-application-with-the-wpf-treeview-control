@@ -1,0 +1,19 @@
+<dx:DXWindow  
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+   xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" 
+   xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+   xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+   xmlns:local="clr-namespace:TreeViewGettingStarted" 
+   x:Class="TreeViewGettingStarted.MainWindow" 
+   Title="MainWindow" Height="350" Width="525">
+    <dx:DXWindow.DataContext>
+        <local:MainWindowViewModel/>
+    </dx:DXWindow.DataContext>
+    <Grid>
+      <dxg:TreeViewControl ItemsSource="{Binding EmployeeDepartments}" 
+                           ChildNodesPath="Employees"
+                           TreeViewFieldName="Name"
+                           ShowAutoFilterNode="True"/>
+  </Grid>
+</dx:DXWindow>
