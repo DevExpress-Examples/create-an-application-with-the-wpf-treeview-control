@@ -8,4 +8,4 @@
 
 # How to create an application with the TreeView control
 
-This example demonstrates how to create an application with the <a href="http://docs.devexpress.devx/WPF/402116/controls-and-libraries/navigation-controls/treeview?v=20.2">TreeViewControl</a>.
+This example demonstrates how to create an application with the <a href="https://docs.devexpress.com/WPF/402116/controls-and-libraries/navigation-controls/treeview?v=20.2">TreeViewControl</a>.
