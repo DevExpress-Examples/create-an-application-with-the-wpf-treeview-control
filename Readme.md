@@ -1,15 +1,10 @@
 <!-- default file list -->
 *Files to look at*:
 
-* [DataModel.cs](./CS/DxAccordionGettingStarted/DataModel.cs) (VB: [DataModel.vb](./VB/DxAccordionGettingStarted/DataModel.vb))
-* [MainWindow.xaml](./CS/DxAccordionGettingStarted/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/DxAccordionGettingStarted/MainWindow.xaml))
-* [ViewModel.cs](./CS/DxAccordionGettingStarted/ViewModel.cs) (VB: [ViewModel.vb](./VB/DxAccordionGettingStarted/ViewModel.vb))
+* [DataModel.cs](./CS/TreeViewGettingStarted/DataModel.cs) (VB: [DataModel.vb](./VB/TreeViewGettingStarted/DataModel.vb))
+* [MainWindow.xaml](./CS/TreeViewGettingStarted/MainWindow.xaml) (VB: [MainWindow.xaml](./VB/TreeViewGettingStarted/MainWindow.xaml))
+* [ViewModel.cs](./CS/TreeViewGettingStarted/ViewModel.cs) (VB: [ViewModel.vb](./VB/TreeViewGettingStarted/ViewModel.vb))
 <!-- default file list end -->
-# How to create a simple application with the AccordionControl
+# How to create an application with the TreeView control
 
-
-This example demonstrates how to create a simple application with the <a href="https://documentation.devexpress.com/WPF/118347/Controls-and-Libraries/Navigation-Controls/Accordion-Control">AccordionControl</a>.
-
-<br/>
-
-
+This example demonstrates how to create an application with the <a href="http://docs.devexpress.devx/WPF/402116/controls-and-libraries/navigation-controls/treeview?v=20.2">TreeViewControl</a>.
