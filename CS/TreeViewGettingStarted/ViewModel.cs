@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Linq;
 
 namespace TreeViewGettingStarted {
-    public class MainWindowViewModel {
+    public class MainWindowViewModel : INotifyPropertyChanged {
         public MainWindowViewModel() {
             var employeeDepartments = Stuff.GetStuff()
                 .GroupBy(x => x.Department)
@@ -11,6 +12,7 @@ namespace TreeViewGettingStarted {
             EmployeeDepartments = new ObservableCollection<EmployeeDepartment>(employeeDepartments.ToArray());
         }
         public ObservableCollection<EmployeeDepartment> EmployeeDepartments { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged;
     }
 
     public class EmployeeDepartment {
