@@ -1,10 +1,9 @@
-﻿using DevExpress.Xpf.Core;
-
 namespace TreeViewGettingStarted {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class MainWindow : DXWindow {
+    public partial class MainWindow : DevExpress.Xpf.Core.ThemedWindow
+    {
         public MainWindow() {
             InitializeComponent();
         }
