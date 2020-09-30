@@ -1,15 +1,19 @@
 ﻿Imports System.Collections.Generic
 Imports System.Collections.ObjectModel
+Imports System.ComponentModel
 Imports System.Linq
 
 Namespace TreeViewGettingStarted
 	Public Class MainWindowViewModel
+		Implements INotifyPropertyChanged
+
 		Public Sub New()
 'INSTANT VB NOTE: The variable employeeDepartments was renamed since Visual Basic does not handle local variables named the same as class members well:
 			Dim employeeDepartments_Conflict = Stuff.GetStuff().GroupBy(Function(x) x.Department).Select(Function(x) New EmployeeDepartment(x.Key, x.ToArray()))
 			EmployeeDepartments = New ObservableCollection(Of EmployeeDepartment)(employeeDepartments_Conflict.ToArray())
 		End Sub
 		Public Property EmployeeDepartments() As ObservableCollection(Of EmployeeDepartment)
+		Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
 	End Class
 
 	Public Class EmployeeDepartment
