@@ -1,42 +1,55 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace TreeViewGettingStarted {
     public class Employee {
+        public Employee(int id, string name) {
+            ID = id;
+            Name = name;
+        }
         public int ID { get; set; }
         public string Name { get; set; }
-        public string Position { get; set; }
-        public string Department { get; set; }
-        public override string ToString() {
-            return Name;
+    }
+    public class EmployeeDepartment {
+        public string Name { get; set; }
+        public ObservableCollection<Employee> Employees { get; }
+
+        public EmployeeDepartment(string name, IEnumerable<Employee> employees) {
+            Name = name;
+            Employees = new ObservableCollection<Employee>(employees);
         }
     }
 
-    public static class Stuff {
-        public static List<Employee> GetStuff() {
-            List<Employee> stuff = new List<Employee>();
-            stuff.Add(new Employee() { ID = 1, Name = "Gregory S. Price", Department = "Management", Position = "President" });
-            stuff.Add(new Employee() { ID = 2, Name = "Irma R. Marshall", Department = "Marketing", Position = "Vice President" });
-            stuff.Add(new Employee() { ID = 3, Name = "John C. Powell", Department = "Operations", Position = "Vice President" });
-            stuff.Add(new Employee() { ID = 4, Name = "Christian P. Laclair", Department = "Production", Position = "Vice President" });
-            stuff.Add(new Employee() { ID = 5, Name = "Karen J. Kelly", Department = "Finance", Position = "Vice President" });
-
-            stuff.Add(new Employee() { ID = 6, Name = "Brian C. Cowling", Department = "Marketing", Position = "Manager" });
-            stuff.Add(new Employee() { ID = 7, Name = "Thomas C. Dawson", Department = "Marketing", Position = "Manager" });
-            stuff.Add(new Employee() { ID = 8, Name = "Angel M. Wilson", Department = "Marketing", Position = "Manager" });
-            stuff.Add(new Employee() { ID = 9, Name = "Bryan R. Henderson", Department = "Marketing", Position = "Manager" });
-
-            stuff.Add(new Employee() { ID = 10, Name = "Harold S. Brandes", Department = "Operations", Position = "Manager" });
-            stuff.Add(new Employee() { ID = 11, Name = "Michael S. Blevins", Department = "Operations", Position = "Manager" });
-            stuff.Add(new Employee() { ID = 12, Name = "Jan K. Sisk", Department = "Operations", Position = "Manager" });
-            stuff.Add(new Employee() { ID = 13, Name = "Sidney L. Holder", Department = "Operations", Position = "Manager" });
-
-            stuff.Add(new Employee() { ID = 14, Name = "James L. Kelsey", Department = "Production", Position = "Manager" });
-            stuff.Add(new Employee() { ID = 15, Name = "Howard M. Carpenter", Department = "Production", Position = "Manager" });
-            stuff.Add(new Employee() { ID = 16, Name = "Jennifer T. Tapia", Department = "Production", Position = "Manager" });
-
-            stuff.Add(new Employee() { ID = 17, Name = "Judith P. Underhill", Department = "Finance", Position = "Manager" });
-            stuff.Add(new Employee() { ID = 18, Name = "Russell E. Belton", Department = "Finance", Position = "Manager" });
-            return stuff;
+    public static class Departments {
+        public static List<EmployeeDepartment> GetDepartments() {
+            List<EmployeeDepartment> departments = new List<EmployeeDepartment>();
+            departments.Add(new EmployeeDepartment("Management", new Employee[] { 
+                new Employee(0, "Gregory S. Price") 
+            }));
+            departments.Add(new EmployeeDepartment("Marketing", new Employee[] { 
+                new Employee(1, "Irma R. Marshall"),
+                new Employee(2, "Brian C. Cowling"),
+                new Employee(3, "Thomas C. Dawson"),
+                new Employee(4, "Bryan R. Henderson"),
+            }));
+            departments.Add(new EmployeeDepartment("Operations", new Employee[] {
+                new Employee(5, "John C. Powell"),
+                new Employee(6, "Harold S. Brandes"),
+                new Employee(7, "Jan K. Sisk"),
+                new Employee(8, "Sidney L. Holder"),
+            }));
+            departments.Add(new EmployeeDepartment("Production", new Employee[] {
+                new Employee(9, "Christian P. Laclair"),
+                new Employee(10, "James L. Kelsey"),
+                new Employee(11, "Howard M. Carpenter"),
+                new Employee(12, "Jennifer T. Tapia"),
+            }));
+            departments.Add(new EmployeeDepartment("Finance", new Employee[] {
+                new Employee(13, "Karen J. Kelly"),
+                new Employee(14, "Judith P. Underhill"),
+                new Employee(15, "Russell E. Belton"),
+            }));   
+            return departments;
         }
     }
 }
