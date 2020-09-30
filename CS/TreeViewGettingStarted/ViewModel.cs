@@ -1,30 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
+using DevExpress.Mvvm;
+using System.Collections.Generic;
 
 namespace TreeViewGettingStarted {
-    public class MainWindowViewModel : INotifyPropertyChanged {
+    public class MainWindowViewModel : ViewModelBase {
         public MainWindowViewModel() {
-            var employeeDepartments = Stuff.GetStuff()
-                .GroupBy(x => x.Department)
-                .Select(x => new EmployeeDepartment(x.Key, x.ToArray()));
-            EmployeeDepartments = new ObservableCollection<EmployeeDepartment>(employeeDepartments.ToArray());
+            EmployeeDepartments = Departments.GetDepartments();
         }
-        public ObservableCollection<EmployeeDepartment> EmployeeDepartments { get; set; }
-        public event PropertyChangedEventHandler PropertyChanged;
-    }
-
-    public class EmployeeDepartment {
-        public string Name { get; set; }
-        public ObservableCollection<Employee> Employees { get; set; }
-
-        public EmployeeDepartment(string name, IEnumerable<Employee> employees) {
-            Name = name;
-            Employees = new ObservableCollection<Employee>(employees);
-        }
-        public override string ToString() {
-            return Name;
-        }
-    }
+        public List<EmployeeDepartment> EmployeeDepartments { get; set; }
+    }    
 }
