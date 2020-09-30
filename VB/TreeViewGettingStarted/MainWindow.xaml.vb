@@ -1,11 +1,9 @@
-﻿Imports DevExpress.Xpf.Core
-
-Namespace TreeViewGettingStarted
+﻿Namespace TreeViewGettingStarted
 	''' <summary>
 	''' Interaction logic for MainWindow.xaml
 	''' </summary>
 	Partial Public Class MainWindow
-		Inherits DXWindow
+		Inherits DevExpress.Xpf.Core.ThemedWindow
 
 		Public Sub New()
 			InitializeComponent()

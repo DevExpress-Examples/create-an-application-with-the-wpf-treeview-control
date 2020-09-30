@@ -1,31 +1,13 @@
-﻿Imports System.Collections.Generic
-Imports System.Collections.ObjectModel
-Imports System.ComponentModel
-Imports System.Linq
+﻿Imports DevExpress.Mvvm
+Imports System.Collections.Generic
 
 Namespace TreeViewGettingStarted
 	Public Class MainWindowViewModel
-		Implements INotifyPropertyChanged
+		Inherits ViewModelBase
 
 		Public Sub New()
-'INSTANT VB NOTE: The variable employeeDepartments was renamed since Visual Basic does not handle local variables named the same as class members well:
-			Dim employeeDepartments_Conflict = Stuff.GetStuff().GroupBy(Function(x) x.Department).Select(Function(x) New EmployeeDepartment(x.Key, x.ToArray()))
-			EmployeeDepartments = New ObservableCollection(Of EmployeeDepartment)(employeeDepartments_Conflict.ToArray())
+			EmployeeDepartments = Departments.GetDepartments()
 		End Sub
-		Public Property EmployeeDepartments() As ObservableCollection(Of EmployeeDepartment)
-		Public Event PropertyChanged As PropertyChangedEventHandler Implements INotifyPropertyChanged.PropertyChanged
-	End Class
-
-	Public Class EmployeeDepartment
-		Public Property Name() As String
-		Public Property Employees() As ObservableCollection(Of Employee)
-
-		Public Sub New(ByVal name As String, ByVal employees As IEnumerable(Of Employee))
-			Me.Name = name
-			Me.Employees = New ObservableCollection(Of Employee)(employees)
-		End Sub
-		Public Overrides Function ToString() As String
-			Return Name
-		End Function
+		Public Property EmployeeDepartments() As List(Of EmployeeDepartment)
 	End Class
 End Namespace
