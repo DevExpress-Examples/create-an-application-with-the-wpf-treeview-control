@@ -1,11 +1,11 @@
 using DevExpress.Mvvm;
-using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace TreeViewGettingStarted {
     public class MainWindowViewModel : ViewModelBase {
         public MainWindowViewModel() {
-            EmployeeDepartments = Departments.GetDepartments();
+            EmployeeDepartments = DepartmentData.GetDepartments();
         }
-        public List<EmployeeDepartment> EmployeeDepartments { get; set; }
+        public ObservableCollection<EmployeeDepartment> EmployeeDepartments { get; set; }
     }    
 }

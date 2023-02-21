@@ -20,9 +20,9 @@ namespace TreeViewGettingStarted {
         }
     }
 
-    public static class Departments {
-        public static List<EmployeeDepartment> GetDepartments() {
-            List<EmployeeDepartment> departments = new List<EmployeeDepartment>();
+    public static class DepartmentData {
+        public static ObservableCollection<EmployeeDepartment> GetDepartments() {
+            var departments = new ObservableCollection<EmployeeDepartment>();
             departments.Add(new EmployeeDepartment("Management", new Employee[] { 
                 new Employee(0, "Gregory S. Price") 
             }));
