@@ -1,13 +1,15 @@
-﻿Imports DevExpress.Mvvm
-Imports System.Collections.Generic
+Imports DevExpress.Mvvm
+Imports System.Collections.ObjectModel
 
 Namespace TreeViewGettingStarted
-	Public Class MainWindowViewModel
-		Inherits ViewModelBase
 
-		Public Sub New()
-			EmployeeDepartments = Departments.GetDepartments()
-		End Sub
-		Public Property EmployeeDepartments() As List(Of EmployeeDepartment)
-	End Class
+    Public Class MainWindowViewModel
+        Inherits ViewModelBase
+
+        Public Sub New()
+            EmployeeDepartments = GetDepartments()
+        End Sub
+
+        Public Property EmployeeDepartments As ObservableCollection(Of EmployeeDepartment)
+    End Class
 End Namespace

@@ -1,12 +1,10 @@
-﻿Namespace TreeViewGettingStarted
-	''' <summary>
-	''' Interaction logic for MainWindow.xaml
-	''' </summary>
-	Partial Public Class MainWindow
-		Inherits DevExpress.Xpf.Core.ThemedWindow
+Namespace TreeViewGettingStarted
 
-		Public Sub New()
-			InitializeComponent()
-		End Sub
-	End Class
+    Public Partial Class MainWindow
+        Inherits DevExpress.Xpf.Core.ThemedWindow
+
+        Public Sub New()
+            Me.InitializeComponent()
+        End Sub
+    End Class
 End Namespace
