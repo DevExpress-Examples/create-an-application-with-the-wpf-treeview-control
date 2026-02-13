@@ -23,7 +23,7 @@ This example is the application created in the [TreeView - Get Started](https://
 * [TreeView - Get Started](https://docs.devexpress.com/WPF/402191/controls-and-libraries/navigation-controls/treeview/get-started)
 * [Bind to Hierarchical Data Structure](https://docs.devexpress.com/WPF/402347/controls-and-libraries/navigation-controls/treeview/data-binding-options/hierarchical-data-structure)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=create-an-application-with-the-wpf-treeview-control&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=create-an-application-with-the-wpf-treeview-control&~~~was_helpful=no)
 
